@@ -47,6 +47,7 @@ namespace Logics
         //***************************************************//
         public bool Login(string userbarcode)
         {
+            ErrorMsg = null;
             if (userbarcode != null)
             {
                 var user = _UserLogic.GetUserLocal(userbarcode);
@@ -165,6 +166,11 @@ namespace Logics
 
         }
 
+        //For testing purposes
+        public void SetUserLogic(UserLogic logic)
+        {
+            _UserLogic = logic;
+        }
     }
 
 }

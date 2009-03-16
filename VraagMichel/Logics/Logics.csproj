@@ -50,12 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExceptionHandlerWrapper.cs" />
-    <Compile Include="InputChecker.cs" />
-    <Compile Include="IUserLogic.cs" />
-    <Compile Include="LocalUserLogic.cs" />
+    <Compile Include="AuthenticationService.cs" />
+    <Compile Include="ExceptionHanldingAuthenticationService.cs" />
+    <Compile Include="IAuthenticationService.cs" />
     <Compile Include="MainFactory.cs" />
-    <Compile Include="MainFactory2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,7 +73,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RemoteUserLogic.cs" />
     <Compile Include="UserLogic.cs" />
   </ItemGroup>
   <ItemGroup>

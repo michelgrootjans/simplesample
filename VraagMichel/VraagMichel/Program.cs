@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
+using Logics;
 
 namespace VraagMichel
 {
@@ -15,7 +14,8 @@ namespace VraagMichel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            var form = new Form1{Authenticator = new ExceptionHanldingAuthenticationService(new AuthenticationService(new DummyUserRao()))};
+            Application.Run(form);
         }
     }
 }

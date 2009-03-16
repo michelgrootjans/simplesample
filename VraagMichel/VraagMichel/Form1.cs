@@ -11,15 +11,19 @@ namespace VraagMichel
             InitializeComponent();
         }
 
+        public IAuthenticationService Authenticator { get; set; }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                MainFactory.Instance.Login("1234567890");
+                var barcode = "1234567890";
+                var user = Authenticator.Login("1234567890");
+                MessageBox.Show(string.Format("Logged in as {0} with code {1}", user.Name, barcode));
             }
-            catch (Exception)
+            catch (Exception exc)
             {
-                MessageBox.Show(MainFactory.Instance.ErrorMsg);
+                MessageBox.Show(exc.Message);
             }
         }
     }
